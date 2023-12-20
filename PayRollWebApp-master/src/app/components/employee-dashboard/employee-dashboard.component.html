@@ -1,0 +1,37 @@
+<nav class="navbar bg-dark border-bottom border-body" data-bs-theme="dark">
+    <div class="container-fluid" id="navdiv">
+      <button id="logout_btn" type="button" (click)="logout()"><i class="material-icons">logout</i>Logout</button>
+    </div>
+</nav>
+<mat-sidenav-container>
+    <mat-sidenav mode="side" opened>
+        <img class="avatar mat-elevation-z8" src="https://cdn-icons-png.flaticon.com/512/3090/3090108.png" />
+        <h4 class="name">Employee</h4>
+        <mat-divider></mat-divider>
+            <button mat-button class="menu-button" [routerLink]="['/employee-dashboard/employee-details']">
+                <mat-icon>dashboard</mat-icon>
+                <span>Dashboard</span>
+            </button>
+        <button mat-button class="menu-button" [routerLink]="['/employee-dashboard/change-password']">
+            <mat-icon>key</mat-icon>
+            <span>Password</span>
+        </button>
+        <button mat-button class="menu-button" [routerLink]="['/employee-dashboard/apply-leave']">
+            <mat-icon>approval</mat-icon>
+            <span>Apply Leave</span>
+        </button>
+        <button mat-button class="menu-button" [routerLink]="['/employee-dashboard/leave-status']">
+            <mat-icon>exit_to_app</mat-icon>
+            <span>Leave Report</span>
+        </button>
+        <button mat-button class="menu-button" [routerLink]="['/employee-dashboard/all-salaries']">
+            <mat-icon>currency_rupee</mat-icon>
+            <span>Salary Slip</span>
+        </button>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <div class="content mat-elevation-z4">
+            <router-outlet></router-outlet>
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>

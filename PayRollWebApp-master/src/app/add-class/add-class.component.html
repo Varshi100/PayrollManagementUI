@@ -1,0 +1,119 @@
+<div class="container">
+    <div class="table-wrapper">
+        <div class="table-title">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h2>Add <b>Class</b></h2>
+                </div>
+                <form novalidate [formGroup]="allowanceLoginForm" (ngSubmit)='AddAllowance()'>
+                    <div class="form-group">
+                        <label for="className">Class Name</label>
+                        <input type="text" id="className" formControlName="ClassName" required>
+                        <div
+                            *ngIf="allowanceLoginForm.get('ClassName')?.invalid &&(allowanceLoginForm.get('ClassName')?.touched ||allowanceLoginForm.get('ClassName')?.dirty)">
+                            <div class="errMessClass" *ngIf="allowanceLoginForm.get('ClassName')?.errors?.['required']">
+                                Class Name is required.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">Basic Salary</label>
+                        <input type="Number" id="basicsalary" formControlName="BasicSalary" required>
+                        <div
+                            *ngIf="allowanceLoginForm.get('BasicSalary')?.invalid &&(allowanceLoginForm.get('BasicSalary')?.dirty ||allowanceLoginForm.get('BasicSalary')?.touched)">
+                            <div *ngIf="allowanceLoginForm.get('BasicSalary')?.errors?.['required']"
+                                class="errMessClass">
+                                Basic Salary is required.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+
+                        <label for="hRAllowance">HR Allowance</label>
+
+                        <input type="Number" id="hRAllowance" formControlName="HRAllowance" required>
+
+                        <div
+                            *ngIf="allowanceLoginForm.get('HRAllowance')?.invalid &&(allowanceLoginForm.get('HRAllowance')?.dirty ||allowanceLoginForm.get('HRAllowance')?.touched)">
+
+                            <div *ngIf="allowanceLoginForm.get('HRAllowance')?.errors?.['required']"
+                                class="errMessClass">
+
+                                HR Allowance is required.
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label for="dAAllowance">DA Allowance</label>
+
+                        <input type="Number" id="dAAllowance" formControlName="DAAllowance" required>
+
+                        <div
+                            *ngIf="allowanceLoginForm.get('DAAllowance')?.invalid &&(allowanceLoginForm.get('DAAllowance')?.dirty ||allowanceLoginForm.get('DAAllowance')?.touched)">
+
+                            <div *ngIf="allowanceLoginForm.get('DAAllowance')?.errors?.['required']"
+                                class="errMessClass">
+
+                                DA Allowance is required.
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label for="travelAllowance">Travel Allowance</label>
+
+                        <input type="Number" id="travelAllowance" formControlName="TravelAllowance" required>
+
+                        <div
+                            *ngIf="allowanceLoginForm.get('TravelAllowance')?.invalid &&(allowanceLoginForm.get('TravelAllowance')?.dirty ||allowanceLoginForm.get('TravelAllowance')?.touched)">
+
+                            <div *ngIf="allowanceLoginForm.get('TravelAllowance')?.errors?.['required']"
+                                class="errMessClass">
+
+                                Travel Allowance is required.
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">Medical Allowance</label>
+                        <input type="Number" id="medicalAllowance" formControlName="MedicalAllowance" required>
+                        <div
+                            *ngIf="allowanceLoginForm.get('MedicalAllowance')?.invalid &&(allowanceLoginForm.get('MedicalAllowance')?.dirty ||allowanceLoginForm.get('MedicalAllowance')?.touched)">
+                            <div *ngIf="allowanceLoginForm.get('MedicalAllowance')?.errors?.['required']"
+                                class="errMessClass">
+                                Medical Allowance is required.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">Washing Allowance</label>
+                        <input type="Number" id="washingAllowance" formControlName="WashingAllowance" required>
+                        <div
+                            *ngIf="allowanceLoginForm.get('WashingAllowance')?.invalid &&(allowanceLoginForm.get('WashingAllowance')?.dirty ||allowanceLoginForm.get('WashingAllowance')?.touched)">
+                            <div *ngIf="allowanceLoginForm.get('WashingAllowance')?.errors?.['required']"
+                                class="errMessClass">
+                                Washing Allowance is required.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="submit-button">Submit</button>
+                        <button type="button" class="back-button" (click)="goToManageEmployees()">Back</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

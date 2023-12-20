@@ -1,0 +1,10 @@
+<div class="details-container">
+  <h1 class="name">Welcome <strong>{{ admin.firstName ? admin.firstName + ' ' + admin.lastName : 'Admin' }}</strong></h1>
+  <h2><u>Admin Details</u></h2>
+
+  <div *ngIf="admin">
+    <h3><strong>Email:</strong> {{ admin.email }}</h3>
+    <h3><strong>Phone Number:</strong> {{ admin.phoneNumber }}</h3>
+  </div>
+
+</div>

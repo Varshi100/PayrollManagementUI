@@ -1,0 +1,46 @@
+<body>
+    <div class="container">
+        <div class="table-wrapper">
+            <div class="table-title">
+                <div class="row">
+                    <div class="col-sm-12">
+						<h2>Manage <b>admins</b></h2>
+					</div>
+					<div class="container">
+						<button class="button" (click)="addAdmin()"><span>Add admin</span></button>						
+					</div>
+                </div>
+            </div>
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Email</th>
+                        <th>Address</th>
+                        <th>Phone Number</th>
+                        <th>JoiningDate</th>
+                        <th>Position</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+					<tr *ngFor="let admin of admins">
+                        <td>{{admin.firstName}}</td>
+                        <td>{{admin.lastName}}</td>
+                        <td>{{admin.email}}</td>
+                        <td>{{admin.address}}</td>
+                        <td>{{admin.phoneNumber}}</td>
+                        <td>{{admin.joiningDate | date}}</td>
+                        <td>{{admin.position}}</td>
+                        <td>
+                            <div class="button-container">
+                                <button class="update" (click)="updateAdmin(admin.id)" >Update</button>
+                              </div> 
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>

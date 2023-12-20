@@ -1,0 +1,88 @@
+<body>
+
+  <div class="container">
+
+    <div class="table-wrapper">
+
+      <div class="table-title">
+
+        <div class="row">
+
+          <div class="col-sm-12">
+
+            <h2>Update <b>Leaves</b></h2>
+
+          </div>
+
+          <div class="container">
+
+            <button class="pending" (click)="filterLeaves('pending')"><span>Pending</span></button>
+
+            <button class="approved" (click)="filterLeaves('approved')"><span>Approved</span></button>
+
+            <button class="rejected" (click)="filterLeaves('rejected')"><span>Rejected</span></button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <table class="table table-striped table-hover">
+
+        <thead>
+
+          <tr>
+            <th>FullName</th>
+            <th>Email</th>
+            <th>Leave Type</th>
+
+            <th>Start Date</th>
+
+            <th>End Date</th>
+
+            <th>Description</th>
+
+            <th *ngIf="selectedStatus === 'pending'">Actions</th>
+
+          </tr>
+
+        </thead>
+
+        <tbody>
+
+          <tr *ngFor="let leave of filteredLeaves">
+
+            <td>{{leave.fullName}}</td>
+            <td>{{leave.email}}</td>
+            <td>{{leave.leaveType}}</td>
+
+            <td>{{leave.leaveStartDate | date}}</td>
+
+            <td>{{leave.leaveEndDate |date}}</td>
+
+            <td>{{leave.leaveStatus}}</td>
+
+            <td *ngIf="leave.leaveStatus === 'pending'">
+
+              <div class="button-container">
+
+                <button class="update" (click)="ApproveLeave(leave.id)">Approve</button>
+
+                <button class="delete" (click)="RejectLeave(leave.id)">Reject</button>
+
+              </div>
+
+            </td>
+
+          </tr>
+
+        </tbody>
+
+      </table>
+
+    </div>
+
+  </div>
+
+</body>

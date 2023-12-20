@@ -1,0 +1,41 @@
+<body>
+    <div class="container">
+        <div class="table-wrapper">
+            <div class="table-title">
+                <div class="row">
+                    <div class="col-sm-12">
+						<h2>Manage <b>Salary</b></h2>
+					</div>
+                </div>
+            </div>
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Position</th>
+                        <th>Date of join</th>
+                        <th>Manage</th>
+                    </tr>
+                </thead>
+                <tbody>
+					<tr *ngFor="let salary of employees">
+                        <td>{{salary.fullName}}</td>
+                        <td>{{salary.email}}</td>
+                        <td>{{salary.phoneNumber}}</td>
+                        <td>{{salary.position}}</td>
+                        <td>{{salary.joiningDate | date}}</td>
+                        <td>
+                            <div class="button-container">
+                                <!--<button class="generate" (click) = "GenerateSalary(salary.id)">Generate PaySlip</button>-->
+                                <button class="generate" (click)="downloadPDF(salary.id)">Generate PaySlip</button>
+                                <!-- <button class="report">Salary Report</button> -->
+                              </div> 
+                        </td>
+                    </tr>			
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>

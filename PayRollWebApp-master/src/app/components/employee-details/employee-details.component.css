@@ -1,0 +1,25 @@
+.details-container {
+    background-color:#336699;
+    padding: 120px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(40, 36, 36, 0.2);
+    text-align: center;
+}
+
+h1 {
+    color: wheat;
+    font-size: 40px;
+    margin-bottom: 20px;
+    font-family: sans-serif;
+}
+
+h3 {
+  color: wheat;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+p {
+    font-size: 16px;
+    margin-bottom: 10px;
+}

@@ -1,0 +1,51 @@
+<div class="container">
+    <div class="table-wrapper">
+        <div class="table-title">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h2 >Update <b>Employees</b></h2>
+                </div>
+                <form [formGroup]="updateEmployeeForm" (ngSubmit)="UpdateEmployee()">
+                    <div class="form-group">
+                        <label for="firstName">First Name</label>
+                        <input type="text" formControlName="FirstName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">Last Name</label>
+                        <input type="text" id="lastName" formControlName="LastName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="address">Address</label>
+                        <input type="text" id="address" formControlName="Address" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" formControlName="Email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" formControlName="PhoneNumber" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" required>
+                    </div>
+                    <!--<div class="form-group">
+                        <label for="joinDate">Date of Joining</label>
+                        <input type="datetime" id="joinDate" formControlName="JoiningDate" required>
+                    </div>-->
+                    <div class="form-group">
+                        <label for="joinDate">Joining Date</label>
+                        <input type="datetime" input matInput [matDatepicker]="JoiningDatePicker" formControlName="JoiningDate" id="joinDate" required>
+                        <mat-datepicker-toggle matSuffix [for]="JoiningDatePicker"></mat-datepicker-toggle>
+                        <mat-datepicker #JoiningDatePicker></mat-datepicker>
+                    </div>
+                    <div class="form-group">
+                        <label for="position">Position</label>
+                        <input type="text" id="position" formControlName="Position" required>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="submit-button">Submit</button>
+                        <button type="button" class="back-button" (click) = "GoBack()">Back</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

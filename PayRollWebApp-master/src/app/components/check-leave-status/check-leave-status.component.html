@@ -1,0 +1,33 @@
+<body>
+    <div class="container">
+        <div class="table-wrapper">
+            <div class="table-title">
+                <div class="row">
+                    <div class="col-sm-12">
+						<h2>Leave <b>Report</b></h2>
+					</div>
+                </div>
+            </div>
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>Leave Type</th>
+                        <th>Start Date</th>
+                        <th>End Date</th>
+                        <th>Status</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+					<tr *ngFor="let leave of leaves">
+                        <td>{{leave.leaveType}}</td>
+                        <td>{{leave.leaveStartDate | date}}</td>
+                        <td>{{leave.leaveEndDate | date}}</td>
+                        <td>{{leave.leaveStatus}}</td>
+                        <td>{{leave.reason}}</td>
+                    </tr>				
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>

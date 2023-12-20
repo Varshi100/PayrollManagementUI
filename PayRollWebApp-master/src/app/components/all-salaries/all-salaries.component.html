@@ -1,0 +1,53 @@
+<body>
+    <div class="container">
+        <div class="table-wrapper">
+            <div class="table-title">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h2>Salary <b> Report</b></h2>
+                    </div>
+                </div>
+            </div>
+            <table>
+                <tr>
+                    <td><b>Basic Salary  </b></td>
+                    <td>{{salarydetail.basicSalary}}</td>
+                </tr>
+                <tr>
+                    <td><b>HR Allowance  </b></td>
+                    <td>{{salarydetail.hrAllowance}}</td>
+                </tr>
+                <tr>
+                    <td><b>DA Allowance </b></td>
+                    <td>{{salarydetail.daAllowance}}</td>
+                </tr>
+                <tr>
+                    <td><b>Travel Allowance  </b></td>
+                    <td>{{salarydetail.travelAllowance}}</td>
+                </tr>
+                <tr>
+                    <td><b>Medical Allowance  </b></td>
+                    <td>{{salarydetail.medicalAllowance}}</td>
+                </tr>
+                <tr>
+                    <td><b>Washing Allowance  </b></td>
+                    <td>{{salarydetail.washingAllowance}}</td>
+                </tr>
+                <tr>
+                    <td><b>Total Deduction  </b></td>
+                    <td>{{salarydetail.totalDeductions}}</td>
+                </tr>
+                <tr>
+                    <td><b>Net Salary  </b></td>
+                    <td>{{salarydetail.netSalary}}</td>
+                </tr>
+            </table>
+            <br />
+            <div>
+                <button type="button" class="button" (click)="printPayslip()">
+                    Print PaySlip
+                </button>
+            </div>
+        </div>
+    </div>
+</body>

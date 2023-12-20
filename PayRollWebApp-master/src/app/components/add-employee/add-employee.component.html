@@ -1,0 +1,132 @@
+<div class="container">
+    <div class="table-wrapper">
+        <div class="table-title">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h2>Add <b>Employees</b></h2>
+                </div>
+                <form novalidate [formGroup]="addEmployeeForm" (ngSubmit)='AddEmployee()'>
+                    <div class="form-group">
+                        <label for="firstName">First Name</label>
+                        <input type="text" id="firstName" formControlName="FirstName" required>
+                        <div
+                            *ngIf="addEmployeeForm.get('FirstName')?.invalid &&(addEmployeeForm.get('FirstName')?.touched ||addEmployeeForm.get('FirstName')?.dirty)">
+                            <div class="errMessClass" *ngIf="addEmployeeForm.get('FirstName')?.errors?.['required']">
+                                First Name is required.
+                            </div>
+
+                            <div class="errMessClass" *ngIf="addEmployeeForm.get('FirstName')?.errors?.['pattern']">
+                                Invalid First Name.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">Last Name</label>
+                        <input type="text" id="lastName" formControlName="LastName" required>
+                        <div
+                            *ngIf="addEmployeeForm.get('LastName')?.invalid &&(addEmployeeForm.get('LastName')?.dirty ||addEmployeeForm.get('LastName')?.touched)">
+                            <div *ngIf="addEmployeeForm.get('LastName')?.errors?.['required']" class="errMessClass">
+                                Last Name is required.
+                            </div>
+                            <div *ngIf="addEmployeeForm.get('LastName')?.errors?.['pattern']" class="errMessClass">
+                                Invalid Last Name.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" formControlName="Email" required>
+                        <div
+                            *ngIf="addEmployeeForm.get('Email')?.invalid &&(addEmployeeForm.get('Email')?.dirty ||addEmployeeForm.get('Email')?.touched)">
+                            <div *ngIf="addEmployeeForm.get('Email')?.errors?.['required']" class="errMessClass">
+                                Email is required.
+                            </div>
+                            <div *ngIf="addEmployeeForm.get('Email')?.errors?.['email']" class="errMessClass">
+                                Invalid Email Format.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="address">Address</label>
+                        <input type="text" id="address" formControlName="Address" required>
+                        <div
+                            *ngIf="addEmployeeForm.get('Address')?.invalid &&(addEmployeeForm.get('Address')?.dirty || addEmployeeForm.get('Address')?.touched)">
+                            <div *ngIf="addEmployeeForm.get('Address')?.errors?.['required']" class="errMessClass">
+                                Address is required.
+                            </div>
+                            <div *ngIf="addEmployeeForm.get('Address')?.errors?.['pattern']" class="errMessClass">
+                                Invalid Address.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" formControlName="Password" required>
+                        <div
+                            *ngIf="addEmployeeForm.get('Password')?.invalid &&(addEmployeeForm.get('Password')?.dirty ||addEmployeeForm.get('Password')?.touched)">
+                            <div *ngIf="addEmployeeForm.get('Password')?.errors?.['required']" class="errMessClass">
+                                Password is required.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="class">Class</label>
+                        <select formControlName="AllowanceId" id="class">
+                            <option *ngFor="let allowance of allowances" [value]="allowance.id">{{allowance.className}}
+                            </option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" formControlName="PhoneNumber" required>
+                        <div
+                            *ngIf="addEmployeeForm.get('PhoneNumber')?.invalid &&(addEmployeeForm.get('PhoneNumber')?.dirty ||addEmployeeForm.get('PhoneNumber')?.touched)">
+                            <div *ngIf="addEmployeeForm.get('PhoneNumber')?.errors?.['required']" class="errMessClass">
+                                PhoneNumber is required.
+                            </div>
+                            <div *ngIf="addEmployeeForm.get('PhoneNumber')?.errors?.['pattern']" class="errMessClass">
+                                Invalid Phone Number.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="designation">Position</label>
+                        <input type="text" id="position" formControlName="Position" required>
+                        <div
+                            *ngIf="addEmployeeForm.get('Position')?.invalid &&(addEmployeeForm.get('Position')?.dirty || addEmployeeForm.get('Position')?.touched)">
+                            <div *ngIf="addEmployeeForm.get('Position')?.errors?.['required']" class="errMessClass">
+                                Address is required.
+                            </div>
+                            <div *ngIf="addEmployeeForm.get('Position')?.errors?.['pattern']" class="errMessClass">
+                                Invalid Address.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="joinDate">Date of Joining</label>
+                        <input type="datetime" input matInput [matDatepicker]="JoiningDatePicker" formControlName="JoiningDate" id="joinDate" required>
+                        <mat-datepicker-toggle matSuffix [for]="JoiningDatePicker"></mat-datepicker-toggle>
+                        <mat-datepicker #JoiningDatePicker></mat-datepicker>
+                        <div
+                            *ngIf="addEmployeeForm.get('JoiningDate')?.invalid &&(addEmployeeForm.get('JoiningDate')?.dirty ||addEmployeeForm.get('JoiningDate')?.touched) ">
+                            <div *ngIf="addEmployeeForm.get('JoiningDate')?.errors?.['required']" class="errMessClass">
+                                Date Of Join is required.
+                            </div>
+                        </div>
+                    </div>
+                    <!--<div class="form-group">
+                        <label for="joinDate">Joining Date</label>
+                        <input type="datetime" input matInput [matDatepicker]="JoiningDatePicker" formControlName="JoiningDate" id="joinDate" required>
+                        <mat-datepicker-toggle matSuffix [for]="JoiningDatePicker"></mat-datepicker-toggle>
+                        <mat-datepicker #JoiningDatePicker></mat-datepicker>
+                    </div>-->
+                    <div class="form-group">
+                        <button type="submit" class="submit-button">Submit</button>
+                        <button type="button" class="back-button" (click)="goToManageEmployees()">Back</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

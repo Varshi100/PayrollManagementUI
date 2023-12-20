@@ -1,0 +1,78 @@
+nav {
+  padding: 20px;
+}
+
+#logout_btn {
+  margin-left: auto; /* Push the button to the right */
+  background-color:  white;
+  color: black;
+  padding: 7px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+  float: right;
+}
+.mat-sidenav {
+    margin: 16px;
+    width: 300px;
+    border-right: none;
+    background: #336699;
+    color: white;
+    border-radius: 10px;
+    padding: 16px;
+    text-align: center;
+  }
+  
+  .content {
+    background-image: url('src\assets\nav-bg.png');
+    /*background-repeat: no-repeat;
+    background-size: 100% 100%;*/
+    height: calc(100vh - 98px);
+    border-radius: 10px;
+    margin: 16px;
+    margin-left: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    color: lightgray;
+    flex-grow: 1; 
+    overflow-y: auto; 
+  }
+  
+  mat-sidenav-container {
+    height: calc(100vh - 65px);
+  }
+  
+  .menu-button {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: 1rem;
+    color:#c1d2d4;
+  }
+
+   .mat-icon {
+    margin-right: 8px;
+   }
+ 
+  .avatar {
+    margin-top: 16px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+  }
+
+  .name {
+    margin-top: 8px;
+    font-weight: normal;
+  }
+
+   .mat-divider {
+    margin-top: 16px;
+    margin-bottom: 16px;
+    background-color: black;
+  }
